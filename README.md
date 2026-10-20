@@ -1,99 +1,42 @@
-# Harmonia
+## At a glance
 
-<div align="center">
+<p align="center">
+  <img src="https://www.gitskins.com/api/section/hero?username=carlos-jim&theme=github-dark&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F74768457%3Fu%3D1049cbb85f5491852f7a7e46e654d22fd18aa249%26v%3D4" alt="carlos-jim hero visual" />
+</p>
 
-**A fast, modern, and open-source desktop music player inspired by Spotify.**  
-Built with **Tauri v2**, **React 19**, **TypeScript**, and **Tailwind CSS**. Powered by the **Subsonic & Navidrome** standard.
+**Carlos Jimenez** · Frontend or full-stack engineer
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tauri v2](https://img.shields.io/badge/Tauri-v2-24C8DB?logo=tauri&logoColor=white)](https://tauri.app)
-[![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
-[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
-[![Navidrome Compatible](https://img.shields.io/badge/Compatible-Navidrome_%2F_Subsonic-00B4D8)](https://www.navidrome.org)
+## What I do
 
-</div>
+Hi everyone. I´m Carlos Jiménez [20 years old, student in Computer Science, from Venezuela]
 
----
+- 👥 **7** followers · **7** following
 
-## ✨ Features
+## By the numbers
 
-- 🎧 **Spotify-inspired UX:** Dark sleek theme, responsive sidebar, navigation history, and persistent bottom player.
-- ⚡ **Ultra-lightweight:** Consumes **~35 MB of RAM** and weighs ~12 MB (unlike traditional 500 MB Electron apps).
-- 🌐 **Subsonic / Navidrome Standard:** Seamlessly connects to any Subsonic-compatible server (Navidrome, Jellyfin, Airsonic) with full streaming support.
-- 🐳 **Docker-ready Backend:** Includes a 1-command Docker Compose setup to host your personal music library in seconds.
-- 🚀 **Offline & Demo Mode:** Works out of the box with royalty-free tracks for testing without requiring a server setup.
-- 🛡️ **Zero Telemetry & 100% Free:** No tracking, no ads, no cloud vendor lock-in.
+<table>
+<tr><td align="center"><b>36</b><br/><sub>repos</sub></td><td align="center"><b>0</b><br/><sub>stars</sub></td><td align="center"><b>163</b><br/><sub>contributions</sub></td></tr>
+</table>
 
----
+## Proof of work
 
-## 🏗️ Architecture
+- **[Carlos-jim](https://github.com/Carlos-jim/Carlos-jim)** — My GitHub profile · ⭐ 0
+- **[prueba-tecnica](https://github.com/Carlos-jim/prueba-tecnica)** — Prueba técnica ASP.NET Core MVC con login contra SQL Server · ⭐ 0
+- **[fit-app](https://github.com/Carlos-jim/fit-app)** — Featured public work · ⭐ 0
+- **[readme](https://github.com/Carlos-jim/readme)** — Featured public work · ⭐ 0
+- **[boston-prueba-tecnica](https://github.com/Carlos-jim/boston-prueba-tecnica)** — Featured public work · ⭐ 0
+- **[prueba-redactalo](https://github.com/Carlos-jim/prueba-redactalo)** — Featured public work · ⭐ 0
 
-```mermaid
-flowchart LR
-    subgraph Client ["Harmonia Desktop (Tauri)"]
-        UI["React 19 + Tailwind CSS"]
-        State["Zustand Store (Audio & Queue)"]
-        SubsonicClient["Subsonic REST API Client (MD5 Auth)"]
-        TauriCore["Tauri Core (Rust / WebView2)"]
-        
-        UI <--> State
-        State <--> SubsonicClient
-        UI <--> TauriCore
-    end
+## Toolkit
 
-    subgraph Server ["Personal Cloud / Local Server"]
-        Navidrome["Navidrome Server (Docker)"]
-        MusicStorage[("Music Folder (.mp3, .flac)")]
-        Navidrome <--> MusicStorage
-    end
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) `TeX` ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) `EJS` ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 
-    SubsonicClient <-->|REST API + HTTP Range Streaming| Navidrome
-```
+## Get in touch
 
----
+<p align="center">
+  <img src="https://www.gitskins.com/api/section/social?username=carlos-jim&theme=github-dark&avatar=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F74768457%3Fu%3D1049cbb85f5491852f7a7e46e654d22fd18aa249%26v%3D4" alt="carlos-jim social visual" />
+</p>
 
-## 🚀 Quick Start
+<a href="https://github.com/carlos-jim">GitHub</a>
 
-### 1. Run the Desktop Client
-
-Clone the repository and install dependencies:
-
-```bash
-# Install dependencies
-npm install
-
-# Run in Web Mode (Fast browser development with Hot Reload)
-npm run dev
-
-# Run in Desktop Mode (Native Windows executable with Tauri)
-npm run tauri dev
-```
-
-### 2. Launch your Personal Music Server (Navidrome with Docker)
-
-Place your music files (`.mp3`, `.flac`, `.m4a`) in `docker/music/`, then start the server:
-
-```bash
-cd docker
-docker compose up -d
-```
-
-1. Open **http://localhost:4533** in your browser to create your initial admin account.
-2. In **Harmonia**, click **Configurar Servidor** (top right) and enter your server URL and credentials.
-
----
-
-## 📦 Building for Production
-
-To compile the standalone Windows executable (`.exe`) and installer (`.msi`):
-
-```bash
-npm run tauri build
-```
-
----
-
-## 📄 License
-
-This project is open-source under the [MIT License](LICENSE).
-# Carlos-jim
+<p align="center"><sub>Carlos Jimenez · <a href="https://www.gitskins.com/readme-generator?template=community-hire-me-brief-94yz">Hire Me Brief</a> template by <a href="https://www.gitskins.com/templates">GitSkins</a> · generated with <a href="https://www.gitskins.com/readme-generator">GitSkins</a></sub></p>
